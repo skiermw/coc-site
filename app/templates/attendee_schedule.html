@@ -5,7 +5,7 @@
   <h1>Schedule for {{ user }} </h1>
   <ul class=attendee_schedule>
   {% for event in events %}
-    <li>{{ event.name }} {{ event.date }} {{ event.start_time }} {{ event.end_time }} {{ event.location }}
+    <li>{{ event.date }} {{ event.start_time }} {{ event.name }} {{ event.end_time }} {{ event.location }}
   {% else %}
     <li><em>No events found.  This attendee needs to sign up for some events!</em>
   {% endfor %}
