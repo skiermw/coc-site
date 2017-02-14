@@ -1,0 +1,14 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Attendee</h1>
+    <form action="" method="post" role="form">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+        {{ wtf.form_field(form.fname) }}
+        {{ wtf.form_field(form.mname) }}
+        {{ wtf.form_field(form.lname) }}
+        {{ wtf.form_field(form.type) }}
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Attendees</h1>
+  <ul class=attendees>
+  {% for attendee in attendees %}
+    <li>{{ attendee.fname }} {{ attendee.mname }} {{ attendee.lname }} {{ attendee.type }}
+  {% else %}
+    <li><em>Unbelievable.  No attendees here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}
