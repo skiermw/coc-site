@@ -73,7 +73,9 @@ def get_credentials():
     response = identity_client.get_id(
         AccountId=AWS_ACCOUNT,
         IdentityPoolId=IDENTITY_POOL_ID,
-        Logins={  }
+        Logins={
+            'accounts.google.com': authResult['id_token']
+        }
     )
     identity_id = response['IdentityId']
     print ("Identity ID: %s" % identity_id)
