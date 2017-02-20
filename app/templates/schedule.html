@@ -1,0 +1,37 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="table-responsive">
+  <h2>Schedule for {{ user }} </h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Location</th>
+      </tr>
+    </thead>
+      <tbody>
+      {% for event in events %}
+        <tr>
+            <td> {{ event.date }} </td>
+            <td> {{ event.name }} </td>
+            <td> {{ event.start_time }} </td>
+            <td> {{ event.end_time }} </td>
+            <td> {{ event.location }} </td>
+        </tr>
+  {% else %}
+    <tr>No events found.  This attendee needs to sign up for some events!</tr>
+  {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}

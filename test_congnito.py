@@ -44,7 +44,7 @@ def alt_get_credentials():
                            )
 
     username = "MarkWorkman"
-    password = ""
+    password = "Hyenas12"
 
     user_pool_id = u"us-east-1:6aac05d7-6032-4745-bb07-4de447b7c220"
     client_id = u"53enhkpo0khlf6shc5ta1b0ssd"
@@ -60,6 +60,7 @@ def alt_get_credentials():
         ClientId=client_id,
         ClientMetadata={'UserPoolId': user_pool_id})
     print(response)
+
 def get_credentials():
     #boto3.setup_default_session(region_name='us-east-1')
 

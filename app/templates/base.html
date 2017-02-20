@@ -3,7 +3,7 @@
 {% block title %}Conference of Champions{% endblock %}
 
 {% block navbar %}
-<div  class="navbar navbar-inverse" role="navigation">
+<div  class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle"
@@ -22,6 +22,7 @@
              <li><a href="/attendee">Attendee</a></li>
              <li><a href="/attendee_schedule">Lookup Schedule</a></li>
          </ul>
+            <p class="navbar-text navbar-right">Logged in as {{ user }}</p>
         </div>
     </div>
 </div>
