@@ -1,7 +1,6 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block title %}Conference of Champions{% endblock %}
-
 {% block navbar %}
 <div  class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -19,7 +18,7 @@
         <div class="navbar-collapse collapse">
          <ul class="nav navbar-nav">
              <li><a href="/attendees">Lookup Attendees</a></li>
-             <li><a href="/attendee">Attendee</a></li>
+             <li><a href="/add_agent">Add Attendee</a></li>
              <li><a href="/attendee_schedule">Lookup Schedule</a></li>
          </ul>
             <p class="navbar-text navbar-right">Logged in as {{ user }}</p>
@@ -27,4 +26,3 @@
     </div>
 </div>
 {% endblock %}
-

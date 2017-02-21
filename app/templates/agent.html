@@ -1,0 +1,11 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add Agent Attendee</h1>
+  {%  import "__formhelpers.html" as forms %}
+<form action="" method="POST" name='add_agent'>
+{{ forms.render(form) }}
+<p><input type="Submit" value="Add Agent"></p>
+</form>
+{% endblock %}

@@ -1,29 +1,29 @@
 from app import app
-from flask import Flask, render_template, request, redirect, session
-from .forms import LoginForm, Attendee
+from flask import Flask, render_template, request, redirect, session, flash, url_for
+from .forms import LoginForm, Agent
 import urllib2
 import json
 
 @app.route('/')
 @app.route('/index')
 def index():
+    print('index')
+    flash('Flash!!')
     if 'username' in session:
         user = session['username']
         return render_template('index.html', user = user)
     else:
         return redirect('/login')
-        '''
-        form = LoginForm()
-        return render_template('login.html',
-                           title='Sign In',
-                           form=form)
-        '''
 
-@app.route('/attendee', methods=['GET', 'POST'])
-def attendee():
-    form = Attendee()
-    return render_template('attendee.html',
-                           title='Attendee',
+@app.route('/add_agent', methods=['GET', 'POST'])
+def add_agent():
+    form = Agent()
+    if form.validate_on_submit():
+        flash('Agent added')
+        print(form.data)
+        return redirect(url_for('add_agent'))
+    return render_template('agent.html',
+                           title='Add Agent',
                            form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
